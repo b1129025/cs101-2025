@@ -1,33 +1,39 @@
-
 #include <stdio.h>
 
-int main()
-{
-        char a[]="AABBBCCCCddd";
-        int size = sizeof(a) / sizeof(a[0]);
-        int j = 0;
-        int s = 0;
-        char r[2][size];
-        int k =1;
-        for(int i =0; i < size; i++) {
-                if (a[i] ==a[i+1]) {
-                        k++;
-                        if (k >9) {
-                                printf ("字元%c數大於9\n",a[i]);
-                                s++;
-                                break;
-                        }
-                } else {
-                        r[0][j] = a[i];
-                        r[1][j] = k;
-                        k =1;
-                        j++;
-                }
-        }
-        for(int i =0; i < j; i++) {
-                if (s&1) break;
-                printf("%c%d",r[0][i], r[1][i]);
+#include <string.h>
+
+int main() {
+
+    char str[100];  // 假設最大輸入字串長度為 100
+
+    int i, count;
+
+    // 讀取輸入字串
+
+    scanf("%s", str);
+
+    // 遍歷字串並計算相同字元的出現次數
+
+    for(i = 0; str[i] != '\0'; i++) {
+
+        count = 1;  // 預設當前字元出現一次
+
+        // 如果當前字元與下一個字元相同，計數器加一
+
+        while(str[i] == str[i + 1]) {
+
+            count++;
+
+            i++;  // 跳過重複的字元
+
         }
 
-        return 0;
+        // 輸出字元及其出現的次數
+
+        printf("%c%d", str[i], count);
+
+    }
+
+    return 0;
+
 }
