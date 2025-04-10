@@ -1,20 +1,17 @@
 #include <stdio.h>
-void multi(int i, int j)
+int factorial(int n)
 {
-    if (j == 0)
+    if (n == 1)
     {
-        return;
+        return 1;
     }
-    multi(i, j - 1);
-    printf("%d*%d=%d\t", i, j, i * j);
+    return n * factorial(n - 1);
 }
 
 int main()
 {
-    for (int i = 1; i <= 9; ++i)
-    {
-        multi(i, 9);
-        printf("\n");
-    }
+    int n = 5;
+    int m = factorial(n);
+    printf("factorial %d = %d \n", n, m);
     return 0;
 }
