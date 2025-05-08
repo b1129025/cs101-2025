@@ -82,3 +82,7 @@ int main()
 {
     BMW_Car BMW;
     AUDI_Car AUDI_Car;
+    BENZ_Car BENZ;
+
+    return 0;
+}
